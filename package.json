@@ -1,0 +1,59 @@
+{
+  "name": "@ryanatkn/eslint-config",
+  "description": "an ESLint config for TypeScript, Svelte, and Prettier",
+  "version": "0.0.1",
+  "license": "Unlicense",
+  "homepage": "https://github.com/ryanatkn/eslint-config",
+  "author": {
+    "name": "Felt Co-op",
+    "email": "team@felt.social",
+    "url": "https://felt.social/"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanatkn/eslint-config.git"
+  },
+  "bugs": {
+    "url": "https://github.com/ryanatkn/eslint-config/issues",
+    "email": "team@felt.social"
+  },
+  "main": "index.cjs",
+  "type": "module",
+  "files": [
+    "changelog.md",
+    "index.cjs"
+  ],
+  "keywords": [
+    "eslint",
+    "eslintconfig"
+  ],
+  "engines": {
+    "node": ">=16.6"
+  },
+  "devDependencies": {
+    "@changesets/changelog-git": "^0.1.14",
+    "prettier": "^3.0.3"
+  },
+  "peerDependencies": {
+    "@typescript-eslint/eslint-plugin": ">=6",
+    "@typescript-eslint/parser": ">=6",
+    "eslint": ">=8",
+    "eslint-plugin-svelte": ">=2",
+    "svelte": ">=4",
+    "typescript": ">=5"
+  },
+  "prettier": {
+    "useTabs": true,
+    "printWidth": 100,
+    "singleQuote": true,
+    "bracketSpacing": false,
+    "overrides": [
+      {
+        "files": "package.json",
+        "options": {
+          "useTabs": false
+        }
+      }
+    ]
+  }
+}
