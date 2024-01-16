@@ -28,7 +28,7 @@
     "eslintconfig"
   ],
   "engines": {
-    "node": ">=16.6"
+    "node": ">=20.10"
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.14",
