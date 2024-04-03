@@ -127,7 +127,6 @@ module.exports = {
 				'@typescript-eslint/no-floating-promises': [1, {ignoreIIFE: true}],
 				'@typescript-eslint/no-for-in-array': 1,
 				'@typescript-eslint/no-implied-eval': 1,
-				'@typescript-eslint/no-inferrable-types': 1,
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				// '@typescript-eslint/no-invalid-void-type': [1, {allowAsThisParameter: true}], // helpful but too many false positives
 				'@typescript-eslint/no-loss-of-precision': 1,

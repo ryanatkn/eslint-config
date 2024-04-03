@@ -114,7 +114,7 @@ This repo uses [changesets](https://github.com/changesets/changesets):
 
 ```bash
 changeset # add a changeset
-changeset version
+changeset version # when ready to publish
 changeset publish
 git add .
 git commit -am vX.Y.Z
