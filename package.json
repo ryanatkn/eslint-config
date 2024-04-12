@@ -39,7 +39,7 @@
     "@typescript-eslint/parser": ">=6",
     "eslint": ">=8",
     "eslint-plugin-svelte": ">=2",
-    "svelte": ">=4",
+    "svelte": "*",
     "typescript": ">=5"
   },
   "prettier": {
