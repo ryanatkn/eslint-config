@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.1.3
+
+### Patch Changes
+
+- 724009e692eb873c86161501fff9678aa88baf2e: disable `no-var`
+
 ## 0.1.2
 
 ### Patch Changes
