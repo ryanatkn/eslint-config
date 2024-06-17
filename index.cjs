@@ -80,7 +80,7 @@ module.exports = {
 		'no-useless-concat': 1,
 		'no-useless-escape': 1,
 		'no-useless-rename': 1,
-		'no-var': 1,
+		'no-var': 0, // hot paths may want to use var and overriding eslint is cumbersome
 		'no-warning-comments': [1, {terms: ['todo block']}],
 		'object-shorthand': 1,
 		'operator-assignment': 1,
