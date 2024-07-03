@@ -33,10 +33,6 @@ const svelte_config = ts.config({
 	},
 });
 
-console.log(`ts_config`, ts_config);
-
-console.log(`svelte_config`, svelte_config);
-
 export default ts.config(...ts_config, ...svelte_config, {
 	ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
 });
