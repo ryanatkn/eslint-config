@@ -1,4 +1,4 @@
-module.exports = {
+const config = {
 	extends: ['plugin:svelte/base'],
 	parser: '@typescript-eslint/parser',
 	parserOptions: {
@@ -247,3 +247,5 @@ module.exports = {
 		},
 	],
 };
+
+export default config;

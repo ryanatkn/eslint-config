@@ -14,11 +14,11 @@
     "url": "git+https://github.com/ryanatkn/eslint-config.git"
   },
   "bugs": "https://github.com/ryanatkn/eslint-config/issues",
-  "main": "index.cjs",
+  "main": "index.js",
   "type": "module",
   "files": [
     "changelog.md",
-    "index.cjs"
+    "index.js"
   ],
   "keywords": [
     "eslint",
