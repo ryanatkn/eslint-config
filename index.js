@@ -16,7 +16,7 @@ const tsConfig = ts.config({
 			...globals.nodeBuiltin,
 		},
 		parserOptions: {
-			project: './tsconfig.eslint.json',
+			project: './tsconfig.json',
 			tsconfigRootDir: import.meta.dirname,
 			extraFileExtensions: ['.svelte'],
 			programs: false,
