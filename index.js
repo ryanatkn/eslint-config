@@ -3,7 +3,7 @@ import ts from 'typescript-eslint';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 
-const tsConfig = ts.config({
+const ts_config = ts.config({
 	files: ['**/*.js', '**/*.ts', '**/*.svelte'],
 	extends: [
 		js.configs.recommended,
@@ -23,7 +23,7 @@ const tsConfig = ts.config({
 	},
 });
 
-const svelteConfig = ts.config({
+const svelte_config = ts.config({
 	files: ['**/*.svelte'],
 	extends: svelte.configs['flat/recommended'],
 	languageOptions: {
@@ -33,6 +33,6 @@ const svelteConfig = ts.config({
 	},
 });
 
-export default ts.config(...tsConfig, ...svelteConfig, {
-	ignores: ['.svelte-kit/'],
+export default ts.config(...ts_config, ...svelte_config, {
+	ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
 });
