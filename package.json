@@ -5,18 +5,15 @@
   "license": "Unlicense",
   "homepage": "https://github.com/ryanatkn/eslint-config",
   "author": {
-    "name": "Felt Co-op",
-    "email": "team@felt.social",
-    "url": "https://felt.social/"
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryanatkn/eslint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/ryanatkn/eslint-config/issues",
-    "email": "team@felt.social"
-  },
+  "bugs": "https://github.com/ryanatkn/eslint-config/issues",
   "main": "index.cjs",
   "type": "module",
   "files": [
@@ -35,9 +32,9 @@
     "prettier": "^3.0.3"
   },
   "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=6",
-    "@typescript-eslint/parser": ">=6",
-    "eslint": ">=8",
+    "@typescript-eslint/eslint-plugin": "^8.0.0-alpha.40",
+    "@typescript-eslint/parser": "^8.0.0-alpha.40",
+    "eslint": ">=9",
     "eslint-plugin-svelte": ">=2",
     "svelte": "*",
     "typescript": ">=5"
