@@ -34,7 +34,7 @@ const svelte_config = ts.config({
 });
 
 export default ts.config(...ts_config, ...svelte_config, {
-	ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*', 'package-lock.json'],
+	ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
 });
 
 /*
