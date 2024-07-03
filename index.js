@@ -9,7 +9,6 @@ const tsConfig = ts.config({
 		js.configs.recommended,
 		...ts.configs.strictTypeChecked,
 		...ts.configs.stylisticTypeChecked,
-		prettier,
 	],
 	languageOptions: {
 		globals: {
