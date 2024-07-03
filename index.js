@@ -17,7 +17,6 @@ const tsConfig = ts.config({
 		},
 		parserOptions: {
 			project: true,
-			tsconfigRootDir: import.meta.dirname,
 			extraFileExtensions: ['.svelte'],
 			programs: false,
 		},
