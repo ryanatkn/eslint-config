@@ -165,14 +165,14 @@ const final_configs = map_errors_to_warn(configs);
 
 export default ts.config(...final_configs);
 
-const is_problem = (v) => {
-	if (v === 'off') return false;
-	if (v === 'error') return true;
-	if (v === 'warn') return true;
-	if (typeof v === 'number') return v !== 0;
-	if (Array.isArray(v)) return is_problem(v[0]);
-	throw new Error(`Unknown value ${v}`);
-};
+// const is_problem = (v) => {
+// 	if (v === 'off') return false;
+// 	if (v === 'error') return true;
+// 	if (v === 'warn') return true;
+// 	if (typeof v === 'number') return v !== 0;
+// 	if (Array.isArray(v)) return is_problem(v[0]);
+// 	throw new Error(`Unknown value ${v}`);
+// };
 
 // /**
 //  * @param {import('eslint').Linter.FlatConfig[]} configs
