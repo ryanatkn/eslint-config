@@ -113,6 +113,7 @@ const unmapped_ts_config = ts.config({
 					1,
 					{path: 'never', types: 'never', lib: 'never'},
 				],
+				'@typescript-eslint/unbound-method': 0,
 			},
 		},
 	],
