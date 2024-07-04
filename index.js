@@ -17,6 +17,7 @@ const ts_config = ts.config({
 				'array-callback-return': 1,
 				'no-await-in-loop': 1,
 				'no-constructor-return': 1,
+				'no-duplicate-imports': 1,
 				'no-inner-declarations': 1,
 				'no-self-compare': 1,
 				'no-unmodified-loop-condition': 1,
@@ -27,7 +28,6 @@ const ts_config = ts.config({
 				eqeqeq: [1, 'always', {null: 'ignore'}],
 				'grouped-accessor-pairs': [1, 'getBeforeSet'],
 				'no-alert': 1, // <3 these but often they're for testing; make explicit w/ eslint-ignore-line
-				'no-duplicate-imports': 1,
 				'no-eval': 1,
 				'no-extend-native': 1,
 				'no-lone-blocks': 1,
