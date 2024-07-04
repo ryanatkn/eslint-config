@@ -83,6 +83,7 @@ const unmapped_ts_config = ts.config({
 					{allowSingleElementEquality: 'always'},
 				],
 				'@typescript-eslint/require-array-sort-compare': [1, {ignoreStringArrays: true}],
+				'@typescript-eslint/restrict-template-expressions': 0, // false positives with many types that stringify
 				'@typescript-eslint/return-await': 1,
 				'@typescript-eslint/switch-exhaustiveness-check': 1,
 				'@typescript-eslint/triple-slash-reference': [
