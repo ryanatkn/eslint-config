@@ -25,6 +25,7 @@ const unmapped_ts_config = ts.config({
 				eqeqeq: [1, 'always', {null: 'ignore'}],
 				'grouped-accessor-pairs': [1, 'getBeforeSet'],
 				'no-alert': 1, // <3 these but often they're for testing; make explicit w/ eslint-ignore-line
+				'no-empty': [1, {allowEmptyCatch: true}],
 				'no-eval': 1,
 				'no-extend-native': 1,
 				'no-lone-blocks': 1,
