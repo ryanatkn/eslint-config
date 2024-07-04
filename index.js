@@ -138,6 +138,7 @@ const unmapped_svelte_config = ts.config({
 		{
 			name: '@ryanatkn/eslint-config#svelte',
 			rules: {
+				'@typescript-eslint/no-confusing-void-expression': 0, // TODO revisit, currently bugged with snippets
 				'svelte/block-lang': [
 					1,
 					{
