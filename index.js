@@ -161,13 +161,13 @@ const map_errors_to_warn = (configs) =>
 
 const final_configs = map_errors_to_warn(unmapped_configs);
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('typescript-eslint').ConfigWithExtends[]} */
 export const configs = ts.config(...final_configs);
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {import('typescript-eslint').ConfigWithExtends} */
 export const ts_config = configs.find((c) => c.name === unmapped_ts_config.name);
 
-/** @type {import('eslint').Linter.FlatConfig} */
+/** @type {import('typescript-eslint').ConfigWithExtends} */
 export const svelte_config = configs.find((c) => c.name === unmapped_svelte_config.name);
 
 // const is_problem = (v) => {
