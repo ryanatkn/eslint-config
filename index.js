@@ -120,6 +120,7 @@ const unmapped_ts_config = ts.config({
 					{path: 'never', types: 'never', lib: 'never'},
 				],
 				'@typescript-eslint/unbound-method': 0,
+				'@typescript-eslint/use-unknown-in-catch-callback-variable': 0,
 			},
 		},
 	],
