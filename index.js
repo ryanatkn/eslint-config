@@ -3,6 +3,9 @@ import ts from 'typescript-eslint';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 
+const TS_CONFIG_NAME = '@ryanatkn/eslint-config#ts';
+const SVELTE_CONFIG_NAME = '@ryanatkn/eslint-config#svelte';
+
 const unmapped_ts_config = ts.config({
 	files: ['**/*.js', '**/*.ts', '**/*.svelte'],
 	extends: [
@@ -10,7 +13,7 @@ const unmapped_ts_config = ts.config({
 		...ts.configs.strictTypeChecked,
 		...ts.configs.stylisticTypeChecked,
 		{
-			name: '@ryanatkn/eslint-config#ts',
+			name: TS_CONFIG_NAME,
 			rules: {
 				'array-callback-return': 1,
 				'no-await-in-loop': 1,
@@ -44,7 +47,7 @@ const unmapped_ts_config = ts.config({
 				'no-useless-computed-key': [1, {enforceForClassMembers: true}],
 				'no-useless-concat': 1,
 				'no-useless-rename': 1,
-				'prefer-const': [1, {destructuring: 'all'}],
+				'prefer-const': 1,
 				'no-var': 0, // hot paths may want to use var and overriding eslint is cumbersome
 				'no-warning-comments': [1, {terms: ['todo block']}],
 				'object-shorthand': 1,
@@ -102,11 +105,13 @@ const unmapped_ts_config = ts.config({
 						ignoreRestSiblings: true,
 					},
 				],
+				'@typescript-eslint/prefer-for-of': 0,
 				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
 					{allowSingleElementEquality: 'always'},
 				],
 				'@typescript-eslint/require-array-sort-compare': [1, {ignoreStringArrays: true}],
+				'@typescript-eslint/restrict-plus-operands': 0,
 				'@typescript-eslint/restrict-template-expressions': 0, // false positives with many types that stringify
 				'@typescript-eslint/return-await': 1,
 				'@typescript-eslint/switch-exhaustiveness-check': 1,
@@ -136,8 +141,9 @@ const unmapped_svelte_config = ts.config({
 	extends: [
 		...svelte.configs['flat/recommended'],
 		{
-			name: '@ryanatkn/eslint-config#svelte',
+			name: SVELTE_CONFIG_NAME,
 			rules: {
+				'prefer-const': [1, {destructuring: 'all'}],
 				'@typescript-eslint/no-confusing-void-expression': 0, // TODO revisit, currently bugged with snippets
 				'svelte/block-lang': [
 					1,
@@ -193,10 +199,10 @@ const final_configs = map_errors_to_warn(unmapped_configs);
 export const configs = ts.config(...final_configs);
 
 /** @type {import('typescript-eslint').ConfigWithExtends} */
-export const ts_config = configs.find((c) => c.name === unmapped_ts_config.name);
+export const ts_config = configs.find((c) => c.name === TS_CONFIG_NAME);
 
 /** @type {import('typescript-eslint').ConfigWithExtends} */
-export const svelte_config = configs.find((c) => c.name === unmapped_svelte_config.name);
+export const svelte_config = configs.find((c) => c.name === SVELTE_CONFIG_NAME);
 
 // /**
 //  * Returns `true` if the given ESLint config value is an error or warning.
