@@ -76,6 +76,7 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				'@typescript-eslint/no-loss-of-precision': 1,
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
+				'@typescript-eslint/no-unsafe-member-access': 0,
 				'@typescript-eslint/no-unused-expressions': [
 					1,
 					{allowShortCircuit: true, allowTernary: true, allowTaggedTemplates: true},
