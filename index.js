@@ -271,7 +271,7 @@ const configs = [
 	},
 ];
 
-const warn_instead_of_error = (configs) => {
+const map_errors_to_warn = (configs) => {
 	return configs.map((config) => {
 		if (!config.rules) return config;
 		const c = {...config, rules: {...config.rules}};
@@ -287,7 +287,7 @@ const warn_instead_of_error = (configs) => {
 	});
 };
 
-const final_configs = warn_instead_of_error(configs);
+const final_configs = map_errors_to_warn(configs);
 
 export default ts.config(...final_configs);
 
@@ -335,6 +335,6 @@ const lint_configs = (configs) => {
 		`conflicts`,
 		conflicts.map((c) => c.rule),
 	); // TODO BLOCK isn't correct yet
-	process.exit();
+	// process.exit();
 };
 lint_configs(final_configs);
