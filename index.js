@@ -112,66 +112,20 @@ const svelte_config = ts.config({
 		{
 			name: 'local_svelte_overrides',
 			rules: {
-				// Svelte overrides for typescript-eslint
-				'@typescript-eslint/no-unused-expressions': 0,
-				// Possible Errors
-				'svelte/infinite-reactive-loop': 0, // Svelte runtime prevents calling the same reactive statement twice in a microtask. But between different microtask, it doesn’t prevent
-				'svelte/no-dom-manipulating': 0, // disallow DOM manipulating
-				'svelte/no-dupe-on-directives': 0, // disallow duplicate on: directives
-				'svelte/no-dupe-use-directives': 0, // disallow duplicate use: directives
-				'svelte/no-export-load-in-svelte-module-in-kit-pages': 0, // disallow exporting load functions in *.svelte module in SvelteKit page components
-				'svelte/no-reactive-reassign': 0, // disallow reassigning reactive values
-				'svelte/no-store-async': 0, // disallow using async/await inside svelte stores because it causes issues with the auto-unsubscribing features
-				'svelte/require-store-callbacks-use-set-param': 0, // store callbacks must use set param
-				'svelte/require-store-reactive-access': 0, // disallow to use of the store itself as an operand. Need to use $ prefix or get function. 	🔧
-				'svelte/valid-prop-names-in-kit-pages': 0, // disallow props other than data or errors in SvelteKit page components
-				// Security Vulnerability
-				'svelte/no-target-blank': 0, // TODO probably want to enable, but as "noreferrer" only because it's equivalent -- disallow target="_blank" attribute without rel="noopener noreferrer"
-				// Best Practices
 				'svelte/block-lang': [
 					1,
 					{
 						enforceScriptPresent: false,
 						enforceStylePresent: false,
 						script: ['ts'], // a list of languages or null to signify no language specified
-						// style: 'scss', // same as for `script`, a single value can be used instead of an array.
 					},
-				], // disallows the use of languages other than those specified in the configuration for the lang attribute of <script> and <style> blocks
-				'svelte/button-has-type': 0, // disallow usage of button without an explicit type attribute
-				'svelte/no-immutable-reactive-statements': 1, // disallow reactive statements that don’t reference reactive values
-				'svelte/no-reactive-functions': 1, // it’s not necessary to define functions in reactive statements 	💡
-				'svelte/no-reactive-literals': 1, // don’t assign literal values in reactive statements 	💡
-				'svelte/no-unused-class-name': 0, // disallow the use of a class in the template without a corresponding style
-				'svelte/no-useless-mustaches': 0, // disallow unnecessary mustache interpolations 	🔧
-				'svelte/prefer-destructured-store-props': 0, // destructure values from object stores for better change tracking & fewer redraws 	💡
-				'svelte/require-each-key': 0, // require keyed {#each} block
-				'svelte/require-event-dispatcher-types': 1, // require type parameters for createEventDispatcher
-				'svelte/require-optimized-style-attribute': 0, // require style attributes that can be optimized
-				'svelte/require-stores-init': 0, // require initial value in store
-				'svelte/valid-each-key': 1, // enforce keys to use variables defined in the {#each} block
-				// Stylistic Issues - these are mostly disabled because they're handled by Prettier
-				'svelte/derived-has-same-inputs-outputs': 0, // derived store should use same variable names between values and callback
-				'svelte/first-attribute-linebreak': 0, // enforce the location of first attribute 	🔧
-				'svelte/html-closing-bracket-spacing': 0, // require or disallow a space before tag’s closing brackets 	🔧
-				'svelte/html-quotes': 0, // enforce quotes style of HTML attributes 	🔧
-				'svelte/html-self-closing': 0, // enforce self-closing style 	🔧
-				'svelte/indent': 0, // enforce consistent indentation 	🔧
-				'svelte/max-attributes-per-line': 0, // enforce the maximum number of attributes per line 	🔧
-				'svelte/mustache-spacing': 0, // enforce unified spacing in mustache 	🔧
-				'svelte/no-extra-reactive-curlies': 0, // disallow wrapping single reactive statements in curly braces 	💡
-				'svelte/no-restricted-html-elements': 0, // disallow specific HTML elements
-				'svelte/no-spaces-around-equal-signs-in-attribute': 0, // disallow spaces around equal signs in attribute 	🔧
-				'svelte/prefer-class-directive': 1, // require class directives instead of ternary expressions 	🔧
-				'svelte/prefer-style-directive': 0, // require style directives instead of style attribute 	🔧
-				'svelte/shorthand-attribute': 0, // enforce use of shorthand syntax in attribute 	🔧
-				'svelte/shorthand-directive': 0, // enforce use of shorthand syntax in directives 	🔧
-				'svelte/sort-attributes': 0, // enforce order of attributes 	🔧
-				'svelte/spaced-html-comment': 0, // enforce consistent spacing after the <!-- and before the --> in a HTML comment 	🔧
-				// Extension Rules
-				'svelte/no-trailing-spaces': 0, // disallow trailing whitespace at the end of lines	🔧
-				// Experimental
-				'svelte/experimental-require-slot-types': 0, // require slot type declaration using the $$Slots interface
-				'svelte/experimental-require-strict-events': 0, // require the strictEvents attribute on <script> tags
+				],
+				'svelte/no-immutable-reactive-statements': 1,
+				'svelte/no-reactive-functions': 1,
+				'svelte/no-reactive-literals': 1,
+				'svelte/require-event-dispatcher-types': 1,
+				'svelte/valid-each-key': 1,
+				'svelte/prefer-class-directive': 1,
 			},
 		},
 	],
@@ -220,41 +174,40 @@ const is_problem = (v) => {
 	throw new Error(`Unknown value ${v}`);
 };
 
-/**
- * @param {import('eslint').Linter.FlatConfig[]} configs
- */
-const lint_configs = (configs) => {
-	const rule_maps = configs
-		.map((c) => {
-			const map = c.rules ? {name: c.name, rules: new Map(Object.entries(c.rules))} : null;
-			return map;
-		})
-		.filter((m) => !!m);
+// /**
+//  * @param {import('eslint').Linter.FlatConfig[]} configs
+//  */
+// const lint_configs = (configs) => {
+// 	const rule_maps = configs
+// 		.map((c) => {
+// 			const map = c.rules ? {name: c.name, rules: new Map(Object.entries(c.rules))} : null;
+// 			return map;
+// 		})
+// 		.filter((m) => !!m);
 
-	const all_rules = new Map();
-	const conflicts = [];
-	for (const {name, rules} of rule_maps) {
-		for (const [rule, value] of rules) {
-			const existing = all_rules.get(rule);
-			if (existing === undefined) {
-				all_rules.set(rule, {name, rule, value});
-				continue;
-			}
-			// There's already a rule with this name, do they conflict?
-			// If not it's fine, if so it's unnecessary.
-			if (is_problem(existing.value) === is_problem(value)) {
-				if (name.startsWith('local_')) {
-					conflicts.push({rule, existing, name, value});
-				}
-				continue;
-			}
-			all_rules.set(rule, {name, rule, value}); // override the existing
-		}
-	}
-	console.log(
-		`conflicts`,
-		conflicts.map((c) => c.rule),
-	); // TODO BLOCK isn't correct yet
-	// process.exit();
-};
-lint_configs(final_configs);
+// 	const all_rules = new Map();
+// 	const conflicts = [];
+// 	for (const {name, rules} of rule_maps) {
+// 		for (const [rule, value] of rules) {
+// 			const existing = all_rules.get(rule);
+// 			if (existing === undefined) {
+// 				all_rules.set(rule, {name, rule, value});
+// 				continue;
+// 			}
+// 			// There's already a rule with this name, do they conflict?
+// 			// If not it's fine, if so it's unnecessary.
+// 			if (is_problem(existing.value) === is_problem(value)) {
+// 				if (name.startsWith('local_')) {
+// 					conflicts.push({rule, existing, name, value});
+// 				}
+// 				continue;
+// 			}
+// 			all_rules.set(rule, {name, rule, value}); // override the existing
+// 		}
+// 	}
+// 	console.log(
+// 		`conflicts`,
+// 		conflicts.map((c) => c.rule),
+// 	);
+// };
+// lint_configs(final_configs);
