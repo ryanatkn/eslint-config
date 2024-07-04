@@ -59,6 +59,8 @@ const unmapped_ts_config = ts.config({
 				radix: 1,
 				'require-unicode-regexp': 1,
 				'@typescript-eslint/array-type': [1, {default: 'array-simple', readonly: 'array-simple'}],
+				'@typescript-eslint/ban-ts-comment': 0,
+				'@typescript-eslint/consistent-generic-constructors': [1, 'type-annotation'],
 				'@typescript-eslint/consistent-type-exports': [
 					1,
 					{fixMixedExportsWithInlineTypeSpecifier: true},
@@ -75,6 +77,7 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-explicit-any': 0,
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
+				'@typescript-eslint/no-non-null-assertion': 0,
 				'@typescript-eslint/no-unnecessary-condition': [1, {allowConstantLoopConditions: true}],
 				'@typescript-eslint/no-unsafe-argument': 0,
 				'@typescript-eslint/no-unsafe-assignment': 0,
@@ -82,6 +85,18 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-unsafe-member-access': 0,
 				'@typescript-eslint/no-unsafe-return': 0,
 				'@typescript-eslint/no-unused-expressions': 0, // false positives with signals
+				'@typescript-eslint/no-unused-vars': [
+					1,
+					{
+						args: 'all',
+						argsIgnorePattern: '^_',
+						caughtErrors: 'all',
+						caughtErrorsIgnorePattern: '^_',
+						destructuredArrayIgnorePattern: '^_',
+						varsIgnorePattern: '^_',
+						ignoreRestSiblings: true,
+					},
+				],
 				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
 					{allowSingleElementEquality: 'always'},
