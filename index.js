@@ -117,24 +117,15 @@ const svelte_config = ts.config({
 				// Possible Errors
 				'svelte/infinite-reactive-loop': 0, // Svelte runtime prevents calling the same reactive statement twice in a microtask. But between different microtask, it doesn’t prevent
 				'svelte/no-dom-manipulating': 0, // disallow DOM manipulating
-				'svelte/no-dupe-else-if-blocks': 1, // disallow duplicate conditions in {#if} / {:else if} chains 	⭐
 				'svelte/no-dupe-on-directives': 0, // disallow duplicate on: directives
-				'svelte/no-dupe-style-properties': 1, // disallow duplicate style properties 	⭐
 				'svelte/no-dupe-use-directives': 0, // disallow duplicate use: directives
-				'svelte/no-dynamic-slot-name': 1, // disallow dynamic slot name 	⭐🔧
 				'svelte/no-export-load-in-svelte-module-in-kit-pages': 0, // disallow exporting load functions in *.svelte module in SvelteKit page components
-				'svelte/no-not-function-handler': 1, // disallow use of not function in event handler 	⭐
-				'svelte/no-object-in-text-mustaches': 1, // disallow objects in text mustache interpolation 	⭐
 				'svelte/no-reactive-reassign': 0, // disallow reassigning reactive values
-				'svelte/no-shorthand-style-property-overrides': 1, // disallow shorthand style properties that override related longhand properties 	⭐
 				'svelte/no-store-async': 0, // disallow using async/await inside svelte stores because it causes issues with the auto-unsubscribing features
-				'svelte/no-unknown-style-directive-property': 1, // disallow unknown style:property 	⭐
 				'svelte/require-store-callbacks-use-set-param': 0, // store callbacks must use set param
 				'svelte/require-store-reactive-access': 0, // disallow to use of the store itself as an operand. Need to use $ prefix or get function. 	🔧
-				'svelte/valid-compile': 1, // disallow warnings when compiling. 	⭐
 				'svelte/valid-prop-names-in-kit-pages': 0, // disallow props other than data or errors in SvelteKit page components
 				// Security Vulnerability
-				'svelte/no-at-html-tags': 1, // disallow use of {@html} to prevent XSS attack	⭐
 				'svelte/no-target-blank': 0, // TODO probably want to enable, but as "noreferrer" only because it's equivalent -- disallow target="_blank" attribute without rel="noopener noreferrer"
 				// Best Practices
 				'svelte/block-lang': [
@@ -147,12 +138,10 @@ const svelte_config = ts.config({
 					},
 				], // disallows the use of languages other than those specified in the configuration for the lang attribute of <script> and <style> blocks
 				'svelte/button-has-type': 0, // disallow usage of button without an explicit type attribute
-				'svelte/no-at-debug-tags': 1, // disallow the use of {@debug} 	⭐
 				'svelte/no-immutable-reactive-statements': 1, // disallow reactive statements that don’t reference reactive values
 				'svelte/no-reactive-functions': 1, // it’s not necessary to define functions in reactive statements 	💡
 				'svelte/no-reactive-literals': 1, // don’t assign literal values in reactive statements 	💡
 				'svelte/no-unused-class-name': 0, // disallow the use of a class in the template without a corresponding style
-				'svelte/no-unused-svelte-ignore': 1, // disallow unused svelte-ignore comments 	⭐
 				'svelte/no-useless-mustaches': 0, // disallow unnecessary mustache interpolations 	🔧
 				'svelte/prefer-destructured-store-props': 0, // destructure values from object stores for better change tracking & fewer redraws 	💡
 				'svelte/require-each-key': 0, // require keyed {#each} block
@@ -179,7 +168,6 @@ const svelte_config = ts.config({
 				'svelte/sort-attributes': 0, // enforce order of attributes 	🔧
 				'svelte/spaced-html-comment': 0, // enforce consistent spacing after the <!-- and before the --> in a HTML comment 	🔧
 				// Extension Rules
-				'svelte/no-inner-declarations': 1, // disallow variable or function declarations in nested blocks	⭐
 				'svelte/no-trailing-spaces': 0, // disallow trailing whitespace at the end of lines	🔧
 				// Experimental
 				'svelte/experimental-require-slot-types': 0, // require slot type declaration using the $$Slots interface
