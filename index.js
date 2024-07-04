@@ -70,6 +70,10 @@ const unmapped_ts_config = ts.config({
 					{allowArgumentsExplicitlyTypedAsAny: true},
 				],
 				'@typescript-eslint/method-signature-style': 1,
+				'@typescript-eslint/no-confusing-void-expression': [
+					1,
+					{ignoreArrowShorthand: true, ignoreVoidOperator: true},
+				],
 				'@typescript-eslint/no-empty-function': [
 					1,
 					{allow: ['overrideMethods', 'decoratedFunctions']},
