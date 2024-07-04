@@ -76,7 +76,9 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
 				'@typescript-eslint/no-unnecessary-condition': [1, {allowConstantLoopConditions: true}],
-				'@typescript-eslint/no-unsafe-assignment': 0, // false positives with `$props()`, revisit
+				'@typescript-eslint/no-unsafe-argument': 0,
+				'@typescript-eslint/no-unsafe-assignment': 0,
+				'@typescript-eslint/no-unsafe-call': 0,
 				'@typescript-eslint/no-unsafe-member-access': 0,
 				'@typescript-eslint/no-unsafe-return': 0,
 				'@typescript-eslint/no-unused-expressions': 0, // false positives with signals
