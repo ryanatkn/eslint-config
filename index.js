@@ -10,6 +10,7 @@ const ts_config = ts.config({
 		...ts.configs.strictTypeChecked,
 		...ts.configs.stylisticTypeChecked,
 		{
+			name: 'local_ts_overrides',
 			rules: {
 				// TODO remove the ones that are identical with the base configs, detect with a helper
 				// eslint possible problems
@@ -177,8 +178,9 @@ const svelte_config = ts.config({
 	extends: [
 		...svelte.configs['flat/recommended'],
 		{
+			name: 'local_svelte_overrides',
 			rules: {
-				// svelte overrides for @typescript-eslint
+				// Svelte overrides for typescript-eslint
 				'@typescript-eslint/no-unused-expressions': 0,
 				// Possible Errors
 				'svelte/infinite-reactive-loop': 0, // Svelte runtime prevents calling the same reactive statement twice in a microtask. But between different microtask, it doesn’t prevent
@@ -209,7 +211,7 @@ const svelte_config = ts.config({
 						enforceScriptPresent: false,
 						enforceStylePresent: false,
 						script: ['ts'], // a list of languages or null to signify no language specified
-						// style: 'scss', // same as for script, a single value can be used instead of an array.
+						// style: 'scss', // same as for `script`, a single value can be used instead of an array.
 					},
 				], // disallows the use of languages other than those specified in the configuration for the lang attribute of <script> and <style> blocks
 				'svelte/button-has-type': 0, // disallow usage of button without an explicit type attribute
