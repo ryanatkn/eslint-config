@@ -77,6 +77,7 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
 				'@typescript-eslint/no-unsafe-assignment': 0, // false positives with `$props()`, revisit
 				'@typescript-eslint/no-unsafe-member-access': 0,
+				'@typescript-eslint/no-unsafe-return': 0,
 				'@typescript-eslint/no-unused-expressions': 0, // false positives with signals
 				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
