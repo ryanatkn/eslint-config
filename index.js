@@ -72,7 +72,6 @@ const unmapped_ts_config = ts.config({
 					1,
 					{allow: ['overrideMethods', 'decoratedFunctions']},
 				],
-				'@typescript-eslint/no-empty-interface': 1,
 				'@typescript-eslint/no-explicit-any': 0,
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
