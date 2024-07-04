@@ -77,9 +77,10 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
 				'@typescript-eslint/no-unsafe-assignment': 0, // false positives with `$props()`, revisit
 				'@typescript-eslint/no-unsafe-member-access': 0,
-				'@typescript-eslint/no-unused-expressions': [
+				'@typescript-eslint/no-unused-expressions': 0, // false positives with signals
+				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
-					{allowShortCircuit: true, allowTernary: true, allowTaggedTemplates: true},
+					{allowSingleElementEquality: 'always'},
 				],
 				'@typescript-eslint/require-array-sort-compare': [1, {ignoreStringArrays: true}],
 				'@typescript-eslint/return-await': 1,
