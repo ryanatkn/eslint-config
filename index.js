@@ -171,6 +171,9 @@ export const ts_config = configs.find((c) => c.name === unmapped_ts_config.name)
 /** @type {import('typescript-eslint').ConfigWithExtends} */
 export const svelte_config = configs.find((c) => c.name === unmapped_svelte_config.name);
 
+// /**
+//  * Returns `true` if the given ESLint config value is an error or warning.
+//  */
 // const is_problem = (v) => {
 // 	if (v === 'off') return false;
 // 	if (v === 'error') return true;
@@ -181,6 +184,9 @@ export const svelte_config = configs.find((c) => c.name === unmapped_svelte_conf
 // };
 
 // /**
+//  * Finds config rules that are added above but duplicate the base config.
+//  * That means they can be deleted above,
+//  * but ONLY if the values fully match the defaults. (TODO could just deepequal compare but it's fine)
 //  * @param {import('eslint').Linter.FlatConfig[]} configs
 //  */
 // const lint_configs = (configs) => {
