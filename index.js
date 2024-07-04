@@ -262,9 +262,50 @@ const svelte_config = ts.config({
 	},
 });
 
-export default ts.config(...ts_config, ...svelte_config, {
-	ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
-});
+/** @type {import('eslint').Linter.FlatConfig[]} */
+const configs = [
+	...ts_config,
+	...svelte_config,
+	{
+		ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
+	},
+];
+
+export default ts.config(...configs);
+
+/**
+ * @param {import('eslint').Linter.FlatConfig[]} configs
+ */
+const lint_configs = (configs) => {
+	const rule_maps = configs
+		.map((c) => {
+			const map = c.rules ? {name: c.name, rules: new Map(Object.entries(c.rules))} : null;
+			return map;
+		})
+		.filter((m) => !!m);
+	console.log(`rule_maps`, rule_maps);
+
+	const all_rules = new Map();
+	const conflicts = [];
+	for (const {name, rules} of rule_maps) {
+		for (const [rule, value] of rules) {
+			const existing = all_rules.get(rule);
+			if (existing === undefined) {
+				all_rules.set(rule, {name, rule, value});
+				continue;
+			}
+			// There's already a rule with this name, do they conflict?
+			// If not it's fine, if so it's unnecessary.
+			console.log(`rule`, rule, `value`, value);
+			if (existing.value === value) {
+				conflicts.push({rule, existing, name, value});
+			}
+		}
+	}
+	console.log(`conflicts`, conflicts); // TODO BLOCK isn't correct yet
+	process.exit();
+};
+lint_configs(configs);
 
 /*
 ts_config [
