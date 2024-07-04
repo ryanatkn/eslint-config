@@ -3,14 +3,14 @@ import ts from 'typescript-eslint';
 import svelte from 'eslint-plugin-svelte';
 import globals from 'globals';
 
-const ts_config = ts.config({
+const unmapped_ts_config = ts.config({
 	files: ['**/*.js', '**/*.ts', '**/*.svelte'],
 	extends: [
 		js.configs.recommended,
 		...ts.configs.strictTypeChecked,
 		...ts.configs.stylisticTypeChecked,
 		{
-			name: 'local_ts_overrides',
+			name: '@ryanatkn/eslint-config#ts',
 			rules: {
 				'array-callback-return': 1,
 				'no-await-in-loop': 1,
@@ -104,12 +104,12 @@ const ts_config = ts.config({
 	},
 });
 
-const svelte_config = ts.config({
+const unmapped_svelte_config = ts.config({
 	files: ['**/*.svelte'],
 	extends: [
 		...svelte.configs['flat/recommended'],
 		{
-			name: 'local_svelte_overrides',
+			name: '@ryanatkn/eslint-config#svelte',
 			rules: {
 				'svelte/block-lang': [
 					1,
@@ -136,16 +136,16 @@ const svelte_config = ts.config({
 });
 
 /** @type {import('eslint').Linter.FlatConfig[]} */
-const configs = [
-	...ts_config,
-	...svelte_config,
+const unmapped_configs = [
+	...unmapped_ts_config,
+	...unmapped_svelte_config,
 	{
 		ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
 	},
 ];
 
-const map_errors_to_warn = (configs) => {
-	return configs.map((config) => {
+const map_errors_to_warn = (configs) =>
+	configs.map((config) => {
 		if (!config.rules) return config;
 		const c = {...config, rules: {...config.rules}};
 		for (const [rule, value] of Object.entries(c.rules)) {
@@ -158,11 +158,17 @@ const map_errors_to_warn = (configs) => {
 		}
 		return c;
 	});
-};
 
-const final_configs = map_errors_to_warn(configs);
+const final_configs = map_errors_to_warn(unmapped_configs);
 
-export default ts.config(...final_configs);
+/** @type {import('eslint').Linter.FlatConfig[]} */
+export const configs = ts.config(...final_configs);
+
+/** @type {import('eslint').Linter.FlatConfig} */
+export const ts_config = configs.find((c) => c.name === unmapped_ts_config.name);
+
+/** @type {import('eslint').Linter.FlatConfig} */
+export const svelte_config = configs.find((c) => c.name === unmapped_svelte_config.name);
 
 // const is_problem = (v) => {
 // 	if (v === 'off') return false;
@@ -196,7 +202,7 @@ export default ts.config(...final_configs);
 // 			// There's already a rule with this name, do they conflict?
 // 			// If not it's fine, if so it's unnecessary.
 // 			if (is_problem(existing.value) === is_problem(value)) {
-// 				if (name.startsWith('local_')) {
+// 				if (name.startsWith('@ryanatkn/eslint-config')) {
 // 					conflicts.push({rule, existing, name, value});
 // 				}
 // 				continue;
