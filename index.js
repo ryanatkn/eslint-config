@@ -12,8 +12,6 @@ const ts_config = ts.config({
 		{
 			name: 'local_ts_overrides',
 			rules: {
-				// TODO remove the ones that are identical with the base configs, detect with a helper
-				// eslint possible problems
 				'array-callback-return': 1,
 				'no-await-in-loop': 1,
 				'no-constructor-return': 1,
@@ -22,7 +20,6 @@ const ts_config = ts.config({
 				'no-self-compare': 1,
 				'no-unmodified-loop-condition': 1,
 				'no-unreachable-loop': 1,
-				// eslint suggestions
 				'consistent-this': 1,
 				'default-case-last': 1,
 				eqeqeq: [1, 'always', {null: 'ignore'}],
@@ -46,6 +43,7 @@ const ts_config = ts.config({
 				'no-useless-computed-key': [1, {enforceForClassMembers: true}],
 				'no-useless-concat': 1,
 				'no-useless-rename': 1,
+				'prefer-const': [1, {destructuring: 'all'}],
 				'no-var': 0, // hot paths may want to use var and overriding eslint is cumbersome
 				'no-warning-comments': [1, {terms: ['todo block']}],
 				'object-shorthand': 1,
