@@ -84,6 +84,7 @@ const unmapped_ts_config = ts.config({
 				],
 				'@typescript-eslint/no-explicit-any': 0,
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
+				'@typescript-eslint/no-invalid-void-type': 0, // TODO revisit - https://github.com/typescript-eslint/typescript-eslint/issues/5752
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
 				'@typescript-eslint/no-non-null-assertion': 0,
 				'@typescript-eslint/no-unnecessary-condition': [1, {allowConstantLoopConditions: true}], // TODO maybe remove this, causing false positives with `??` chaining, also maybed helped in some situations with `noUncheckedIndexedAccess`
