@@ -16,7 +16,6 @@
   "bugs": "https://github.com/ryanatkn/eslint-config/issues",
   "type": "module",
   "files": [
-    "changelog.md",
     "index.js",
     "index.d.ts"
   ],
