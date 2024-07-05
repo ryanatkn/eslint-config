@@ -13,5 +13,6 @@ removed:
 
 added:
 
+- `svelte/button-has-type`
 - `svelte/prefer-class-directive`
 - `svelte/prefer-style-directive`
