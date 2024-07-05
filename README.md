@@ -8,11 +8,12 @@ npm i -D @ryanatkn/eslint-config
 
 I use this ESLint config in all of [my projects](https://github.com/ryanatkn).
 For a simple example see [fuz_template](https://github.com/ryanatkn/fuz_template).
-It's fairly strict, but more relaxed than the `typescript-eslint` strict config in several cases,
-and it adds a little more strictness in places.
+It's fairly strict, adding many rules beyond the ESLint recommended config.
+It extends the `typescript-eslint` strict and stylistic typechecked configs,
+modifying some rules and adding others. See [index.js](index.js) for details.
 
 It's designed to complement TypeScript and Prettier,
-so all redundant rules are disabled.
+so all redundant rules are omitted.
 It doesn't use the Prettier ESLint plugin - you can add it yourself,
 I prefer running Prettier separately.
 
