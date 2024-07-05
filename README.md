@@ -29,7 +29,7 @@ while reserving red for type errors, without losing other error behaviors.
 Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
 I'm happy to discuss my choices - if something feels restrictive without fixing actual mistakes,
-it's likely to reduce cognitive load.
+it's likely to reduce cognitive load when reading code.
 Also there are bugs and limitations in `typescript-eslint`
 that are unfortunate but preferred tradeoffs, some of which would benefit from enabling
 `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes` in your tsconfig,
