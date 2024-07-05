@@ -29,6 +29,8 @@ while reserving red for type errors, without losing other error behaviors.
 > Instead of the values `'off'`, `'warn'`, and `'error'`,
 > this config uses `0` (off) and `1` (warn).
 > Because it doesn't use errors, this feels clearer.
+> It also makes it easy to distinguish this config's rules from the configs extended
+> from `eslint`, `typescript-eslint`, and `eslint-plugin-svelte` when inspecting the data.
 
 Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
