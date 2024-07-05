@@ -15,7 +15,7 @@ modifying some rules and adding others. See [index.js](index.js) for details.
 It's designed to complement TypeScript and Prettier,
 so all redundant rules are omitted.
 It doesn't use the Prettier ESLint plugin - you can add it yourself,
-I prefer running Prettier separately.
+I prefer running Prettier with `--check` separately.
 
 To distinguish linting problems from type errors while editing,
 all of the rules are set to warn, not error,
@@ -70,22 +70,6 @@ svelte_config.rules['svelte/no-inner-declarations'] = 0,
 export default configs;
 ```
 
-### VSCode setup
-
-To make [the VSCode ESLint plugin](https://github.com/microsoft/vscode-eslint) work with Svelte,
-add the following to VSCode's `settings.json`:
-
-```jsonc
-{
-	// ctrl+shift+P then `> Preferences: Open Settings (JSON)`
-	// ...other config
-	"eslint.validate": ["svelte", "javascript", "javascriptreact"]
-}
-```
-
-See also
-[the `eslint-plugin-svelte` integrations docs](https://sveltejs.github.io/eslint-plugin-svelte/user-guide/#editor-integrations).
-
 ## Features
 
 One useful opt-in feature is implemented with the following:
@@ -103,6 +87,22 @@ I use this constantly:
 // TODO BLOCK do the thing
 // todo block is case insensitive
 ```
+
+### VSCode setup
+
+To make [the VSCode ESLint plugin](https://github.com/microsoft/vscode-eslint) work with Svelte,
+add the following to VSCode's `settings.json`:
+
+```jsonc
+{
+	// ctrl+shift+P then `> Preferences: Open Settings (JSON)`
+	// ...other config
+	"eslint.validate": ["svelte", "javascript", "javascriptreact"]
+}
+```
+
+See also
+[the `eslint-plugin-svelte` integrations docs](https://sveltejs.github.io/eslint-plugin-svelte/user-guide/#editor-integrations).
 
 ## Develop
 
