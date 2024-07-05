@@ -8,6 +8,8 @@ disabled from recommended:
 
 - `svelte/no-dynamic-slot-name`
 - `svelte/no-inner-declarations`
+- `svelte/no-not-function-handler`
+- `svelte/no-shorthand-style-property-overrides`
 
 removed:
 
