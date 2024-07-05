@@ -159,7 +159,7 @@ const unmapped_svelte_config = ts.config({
 				// disabling some of these for performance reasons and lack of utility with Svelte 5
 				'svelte/no-inner-declarations': 0,
 				'svelte/no-dynamic-slot-name': 0,
-				'svelte/no-not-function-handlssder': 0,
+				'svelte/no-not-function-handler': 0,
 				'svelte/no-shorthand-style-property-overrides': 0, // covered by `svelte/prefer-style-directive`
 				'svelte/prefer-class-directive': 1,
 				'svelte/prefer-style-directive': 1,
