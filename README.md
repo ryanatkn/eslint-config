@@ -6,7 +6,12 @@
 npm i -D @ryanatkn/eslint-config
 ```
 
-This ESLint config is designed to complement TypeScript and Prettier,
+I use this ESLint config in all of [my projects](https://github.com/ryanatkn).
+For a simple example see [fuz_template](https://github.com/ryanatkn/fuz_template).
+It's fairly strict, but more relaxed than the `typescript-eslint` strict config in several cases,
+and it adds a little more strictness in places.
+
+It's designed to complement TypeScript and Prettier,
 so all redundant rules are disabled.
 It doesn't use the Prettier ESLint plugin - you can add it yourself,
 I prefer running Prettier separately.
@@ -14,9 +19,10 @@ I prefer running Prettier separately.
 To distinguish linting problems from type errors while editing,
 all of the rules are set to warn, not error,
 and users are expected run `eslint --max-warnings 0`
-to treat them as errors when desired, like in CI. (my preference)
+to treat them as errors when desired, like in CI.
+(my preference is to block CI on all linting problems)
 This works well to get yellow squigglies in text editors for linting problems
-while reserving red for type errors.
+while reserving red for type errors, without losing other error behaviors.
 
 > Instead of the values `'off'`, `'warn'`, and `'error'`,
 > this config uses `0` (off) and `1` (warn).
@@ -61,7 +67,6 @@ ts_config.rules['no-console'] = 1;
 svelte_config.rules['svelte/no-inner-declarations'] = 0,
 
 export default configs;
-
 ```
 
 ### VSCode setup
@@ -89,7 +94,8 @@ One useful opt-in feature is implemented with the following:
 ```
 
 This can be used to leave notes to yourself while you develop a set of changes,
-and combined with CI, you'll be blocked from merging until they're all resolved:
+and combined with CI, you'll be blocked from merging until they're all resolved.
+I use this constantly:
 
 ```ts
 // TODO BLOCK
@@ -99,9 +105,8 @@ and combined with CI, you'll be blocked from merging until they're all resolved:
 
 ## Develop
 
-See [index.cjs](index.cjs) and the [ESLint docs](https://eslint.org/).
-
-Rules are current through `eslint@8.20.0` and `@typescript-eslint/eslint-plugin@5.30.7`.
+Edit [index.js](index.js) and see the [ESLint docs](https://eslint.org/).
+Run `npm link ../eslint-config` from projects in sibling directories to test your changes.
 
 ## Publish
 
