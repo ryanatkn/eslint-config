@@ -27,10 +27,13 @@
   },
   "keywords": [
     "eslint",
-    "eslintconfig"
+    "config",
+    "eslint-config",
+    "typescript",
+    "svelte"
   ],
   "engines": {
-    "node": ">=20.10"
+    "node": ">=20.12"
   },
   "peerDependencies": {
     "eslint": "^9.6",
