@@ -2,7 +2,7 @@
 '@ryanatkn/eslint-config': minor
 ---
 
-change svelte rules
+update svelte rules
 
 removed:
 
