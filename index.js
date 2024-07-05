@@ -196,13 +196,10 @@ const map_errors_to_warn = (configs) =>
 
 const final_configs = map_errors_to_warn(unmapped_configs);
 
-/** @type {import('typescript-eslint').ConfigWithExtends[]} */
 export const configs = ts.config(...final_configs);
 
-/** @type {import('typescript-eslint').ConfigWithExtends} */
 export const ts_config = configs.find((c) => c.name === TS_CONFIG_NAME);
 
-/** @type {import('typescript-eslint').ConfigWithExtends} */
 export const svelte_config = configs.find((c) => c.name === SVELTE_CONFIG_NAME);
 
 // /**
