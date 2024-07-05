@@ -4,10 +4,14 @@
 
 update svelte rules
 
+disabled from recommended:
+
+- `svelte/no-dynamic-slot-name`
+- `svelte/no-inner-declarations`
+
 removed:
 
 - `svelte/no-immutable-reactive-statements`
-- `svelte/no-inner-declarations`
 - `svelte/no-reactive-functions`
 - `svelte/no-reactive-literals`
 - `svelte/valid-each-key`
