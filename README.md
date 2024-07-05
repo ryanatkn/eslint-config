@@ -40,7 +40,8 @@ it's likely to reduce cognitive load when reading code.
 > [@typescript-eslint/no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/)
 > appears to have both bugs and limits, but it also catches many easy-to-make mistakes.
 > If anything is too cumbersome or lax for your taste,
-> see below for the simple way to globally change individual rules.
+> see below for the simple way to change the global rules,
+> and maybe hop on [Discord](https://discord.gg/YU5tyeK72X) to discuss.
 
 > ⚠️ The peer dependency versions may be overly restrictive.
 > Please let me know if it's causing a problem.
