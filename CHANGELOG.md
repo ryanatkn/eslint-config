@@ -1,5 +1,18 @@
 # @ryanatkn/eslint-config
 
+## 0.2.0
+
+### Minor Changes
+
+- upgrade to `eslint@9`
+
+  peer deps:
+
+  - `eslint-plugin-svelte@2.41`
+  - `svelte@5.0.0-next.0`
+  - `typescript@5.5`
+  - `typescript-eslint@8.0.0-alpha.39`
+
 ## 0.1.3
 
 ### Patch Changes
