@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.4.0
+
+### Minor Changes
+
+- bump `node@20.12`
+
 ## 0.3.0
 
 ### Minor Changes
