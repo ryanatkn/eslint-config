@@ -33,6 +33,9 @@ while reserving red for type errors, without losing other error behaviors.
 Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
 
+> ⚠️ The peer dependency versions may be overly restrictive.
+> Please let me know if it's causing a problem.
+
 > ⚠️ Some rules may be annoyingly strict, and sometimes this is due to bugs in the implementations.
 > For example
 > [@typescript-eslint/no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/)
