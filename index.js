@@ -158,7 +158,6 @@ const unmapped_svelte_config = ts.config({
 				'svelte/no-immutable-reactive-statements': 1,
 				'svelte/no-reactive-functions': 1,
 				'svelte/no-reactive-literals': 1,
-				'svelte/require-event-dispatcher-types': 1,
 				'svelte/valid-each-key': 1,
 				'svelte/prefer-class-directive': 1,
 			},
