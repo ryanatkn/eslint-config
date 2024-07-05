@@ -155,7 +155,7 @@ const unmapped_svelte_config = ts.config({
 						script: ['ts'], // a list of languages or null to signify no language specified
 					},
 				],
-				'svelte/button-has-type': 1,
+				'svelte/button-has-type': 1, // because surprise page refreshes
 				'svelte/prefer-class-directive': 1,
 				'svelte/prefer-style-directive': 1,
 				// disabling some of these for lack of utility with Svelte 5 (and better performance)
