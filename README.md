@@ -6,10 +6,12 @@
 npm i -D @ryanatkn/eslint-config
 ```
 
-I use this ESLint config in all of [my projects](https://github.com/ryanatkn).
+I use this [ESLint](https://github.com/eslint/eslint/)
+config in all of [my projects](https://github.com/ryanatkn).
 For a simple example see [fuz_template](https://github.com/ryanatkn/fuz_template).
 It's fairly strict, adding many rules beyond the ESLint recommended config.
-It extends the `typescript-eslint` strict and stylistic typechecked configs,
+It extends the [`typescript-eslint`](https://github.com/typescript-eslint/typescript-eslint)
+strict and stylistic typechecked configs,
 modifying some rules and adding others. See [index.js](index.js) for details.
 
 It's designed to complement TypeScript and Prettier,
@@ -31,6 +33,13 @@ while reserving red for type errors, without losing other error behaviors.
 
 Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
+
+> ⚠️ Some rules may be annoyingly strict, and sometimes this is due to bugs in the implementations.
+> For example
+> [@typescript-eslint/no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/)
+> appears to have bugs, but it also catches many easy-to-make mistakes.
+> If anything is too cumbersome or lax for your taste,
+> see below for the simple way to change individual rules.
 
 ## Usage
 
