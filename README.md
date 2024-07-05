@@ -65,7 +65,7 @@ import {configs, ts_config, svelte_config} from '@ryanatkn/eslint-config';
 
 ts_config.rules['no-console'] = 1;
 
-svelte_config.rules['svelte/no-inner-declarations'] = 0,
+svelte_config.rules['svelte/button-has-type'] = 0;
 
 export default configs;
 ```
