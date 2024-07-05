@@ -79,6 +79,9 @@ svelte_config.rules['svelte/button-has-type'] = 0;
 export default configs;
 ```
 
+> ⚠️ The dependencies do not provide appear to provide typed rules,
+> but missing rules do throw errors at runtime.
+
 ## Features
 
 One useful opt-in feature is implemented with the following:
