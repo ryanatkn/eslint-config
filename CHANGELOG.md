@@ -4,13 +4,13 @@
 
 ### Minor Changes
 
-- bump `node@20.12`
+- bump `node@20.12` ([a976375](https://github.com/ryanatkn/eslint-config/commit/a976375258330f84b992101a4419c2513bf5383c))
 
 ## 0.3.0
 
 ### Minor Changes
 
-- 777480a0108c6a8cc3c869bab15a4da639a1f943: update svelte rules
+- update svelte rules ([#2](https://github.com/ryanatkn/eslint-config/pull/2))
 
   disabled from recommended:
 
@@ -35,7 +35,7 @@
 
 ### Minor Changes
 
-- upgrade to `eslint@9`
+- upgrade to `eslint@9` ([#1](https://github.com/ryanatkn/eslint-config/pull/1))
 
   peer deps:
 
@@ -48,19 +48,19 @@
 
 ### Patch Changes
 
-- 724009e692eb873c86161501fff9678aa88baf2e: disable `no-var`
+- disable `no-var` ([724009e](https://github.com/ryanatkn/eslint-config/commit/724009e692eb873c86161501fff9678aa88baf2e))
 
 ## 0.1.2
 
 ### Patch Changes
 
-- 1d8d0227f151ae37ea0992085338fa7030061ee7: loosen Svelte peer dep to \*
+- loosen Svelte peer dep to \* ([1d8d022](https://github.com/ryanatkn/eslint-config/commit/1d8d0227f151ae37ea0992085338fa7030061ee7))
 
 ## 0.1.1
 
 ### Patch Changes
 
-- 6347127: disable `@typescript-eslint/no-inferrable-types`
+- disable `@typescript-eslint/no-inferrable-types` ([6347127](https://github.com/ryanatkn/eslint-config/commit/6347127))
 
 ## 0.1.0
 

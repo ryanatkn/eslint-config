@@ -54,9 +54,9 @@ via npm (here's [the package on npm](https://www.npmjs.com/package/@ryanatkn/esl
 
 ```bash
 npm i -D eslint \
-	typescript-eslint \
-	eslint-plugin-svelte \
-	@ryanatkn/eslint-config
+         typescript-eslint \
+         eslint-plugin-svelte \
+         @ryanatkn/eslint-config
 ```
 
 Then add your
@@ -130,6 +130,7 @@ Run `npm link ../eslint-config` from projects in sibling directories to test you
 This repo uses [changesets](https://github.com/changesets/changesets):
 
 ```bash
+npm i -g @changesets/cli # install yourself, it's not a dev dep, maybe it should be
 changeset # add a changeset
 changeset version # when ready to publish
 changeset publish
