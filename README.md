@@ -30,20 +30,20 @@ Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
 I'm happy to discuss my choices - if something feels restrictive without fixing actual mistakes,
 it's likely to reduce cognitive load when reading code.
-Also there are bugs and limitations in `typescript-eslint`
-that are unfortunate but preferred tradeoffs, some of which would benefit from enabling
-`noUncheckedIndexedAccess` and `exactOptionalPropertyTypes` in your tsconfig,
-but I personally don't use them yet.
+
+> ⚠️ Some rules may be annoyingly strict.
+> Some rules require tsconfig options like `strictNullChecks`,
+> and more nags go way if you enable `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`.
+> (I personally don't use these yet, will revisit)
+> Some annoyances are caused by bugs or limitations in the implementations.
+> For example
+> [@typescript-eslint/no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/)
+> appears to have both bugs and limits, but it also catches many easy-to-make mistakes.
+> If anything is too cumbersome or lax for your taste,
+> see below for the simple way to globally change individual rules.
 
 > ⚠️ The peer dependency versions may be overly restrictive.
 > Please let me know if it's causing a problem.
-
-> ⚠️ Some rules may be annoyingly strict, and sometimes this is due to bugs in the implementations.
-> For example
-> [@typescript-eslint/no-unnecessary-condition](https://typescript-eslint.io/rules/no-unnecessary-condition/)
-> appears to have bugs, but it also catches many easy-to-make mistakes.
-> If anything is too cumbersome or lax for your taste,
-> see below for the simple way to change individual rules.
 
 ## Usage
 
