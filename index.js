@@ -159,7 +159,6 @@ const unmapped_svelte_config = ts.config({
 				'svelte/no-inner-declarations': 0,
 				'svelte/prefer-class-directive': 1,
 				'svelte/prefer-style-directive': 1,
-				'svelte/valid-each-key': 1,
 			},
 		},
 	],

@@ -10,6 +10,7 @@ removed:
 - `svelte/no-inner-declarations`
 - `svelte/no-reactive-functions`
 - `svelte/no-reactive-literals`
+- `svelte/valid-each-key`
 
 added:
 
