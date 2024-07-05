@@ -34,6 +34,11 @@ while reserving red for type errors, without losing other error behaviors.
 
 Have any questions or change requests?
 Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
+I'm happy to discuss my choices - if something is confusing it's likely to reduce cognitive load.
+Also there are bugs and limitations in `typescript-eslint`
+that are unfortunate but preferred tradeoffs, some of which would benefit from enabling
+`noUncheckedIndexedAccess` and `exactOptionalPropertyTypes` in your tsconfig,
+but I personally don't use them yet.
 
 > ⚠️ The peer dependency versions may be overly restrictive.
 > Please let me know if it's causing a problem.
