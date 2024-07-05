@@ -18,7 +18,7 @@ so all redundant rules are omitted.
 It doesn't use the Prettier ESLint plugin - you can add it yourself,
 I prefer running Prettier with `--check` separately.
 
-To distinguish linting problems from type errors while editing,
+To distinguish linting problems from type errors visually in your editor,
 all of the rules are set to warn, not error,
 and users are expected run `eslint --max-warnings 0`
 to treat them as errors when desired, like in CI.
