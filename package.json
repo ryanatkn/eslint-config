@@ -5,24 +5,27 @@
   "license": "Unlicense",
   "homepage": "https://github.com/ryanatkn/eslint-config",
   "author": {
-    "name": "Felt Co-op",
-    "email": "team@felt.social",
-    "url": "https://felt.social/"
+    "name": "Ryan Atkinson",
+    "email": "mail@ryanatkn.com",
+    "url": "https://www.ryanatkn.com/"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/ryanatkn/eslint-config.git"
   },
-  "bugs": {
-    "url": "https://github.com/ryanatkn/eslint-config/issues",
-    "email": "team@felt.social"
-  },
-  "main": "index.cjs",
+  "bugs": "https://github.com/ryanatkn/eslint-config/issues",
   "type": "module",
   "files": [
     "changelog.md",
-    "index.cjs"
+    "index.js",
+    "index.d.ts"
   ],
+  "exports": {
+    ".": {
+      "types": "./index.d.ts",
+      "default": "./index.js"
+    }
+  },
   "keywords": [
     "eslint",
     "eslintconfig"
@@ -30,17 +33,19 @@
   "engines": {
     "node": ">=20.10"
   },
+  "peerDependencies": {
+    "eslint": "^9.6",
+    "eslint-plugin-svelte": "^2.41",
+    "svelte": "^5.0.0-next.0",
+    "typescript": "^5.5",
+    "typescript-eslint": "^8.0.0-alpha.39"
+  },
+  "dependencies": {
+    "globals": "^15.8.0"
+  },
   "devDependencies": {
     "@changesets/changelog-git": "^0.1.14",
     "prettier": "^3.0.3"
-  },
-  "peerDependencies": {
-    "@typescript-eslint/eslint-plugin": ">=6",
-    "@typescript-eslint/parser": ">=6",
-    "eslint": ">=8",
-    "eslint-plugin-svelte": ">=2",
-    "svelte": "*",
-    "typescript": ">=5"
   },
   "prettier": {
     "useTabs": true,
