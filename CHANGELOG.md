@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.4.2
+
+### Patch Changes
+
+- 66ec4a9dc7a0aa33719a38688607c5ef90317841: disable `no-multi-str`
+
 ## 0.4.1
 
 ### Patch Changes
