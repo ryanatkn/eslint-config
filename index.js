@@ -32,7 +32,6 @@ const unmapped_ts_config = ts.config({
 				'no-eval': 1,
 				'no-extend-native': 1,
 				'no-lone-blocks': 1,
-				'no-multi-str': 1,
 				'no-new': 1,
 				'no-new-func': 1, // catches cases missed by @typescript-eslint/no-implied-eval
 				'no-new-object': 1,
