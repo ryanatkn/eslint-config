@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.4.1
+
+### Patch Changes
+
+- ad32c76ac6e3cfba023f8505cac60502362a2840: disable `require-unicode-regexp`
+
 ## 0.4.0
 
 ### Minor Changes
