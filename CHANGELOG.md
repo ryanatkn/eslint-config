@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.0
+
+### Minor Changes
+
+- 47ddb7f8c0b9a5722ed7ce55b6e2721e67f24dfb: upgrade `typescript-eslint@8`
+
 ## 0.4.2
 
 ### Patch Changes
