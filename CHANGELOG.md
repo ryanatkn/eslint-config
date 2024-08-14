@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.1
+
+### Patch Changes
+
+- 77ea03e0bdf370136e0568c2cf1391343acebae4: disable `@typescript-eslint/no-unnecessary-type-parameters`
+
 ## 0.5.0
 
 ### Minor Changes
