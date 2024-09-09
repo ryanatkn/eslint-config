@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.2
+
+### Patch Changes
+
+- 3dc1920e37c34759cc80f24e8b4112957c70bed5: disable `@typescript-eslint/no-inferrable-types`
+
 ## 0.5.1
 
 ### Patch Changes
