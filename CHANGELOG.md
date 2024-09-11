@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.3
+
+### Patch Changes
+
+- 9431882: fix types to make `rules` required
+
 ## 0.5.2
 
 ### Patch Changes
