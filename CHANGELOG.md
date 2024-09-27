@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.4
+
+### Patch Changes
+
+- bf8a132: fix type
+
 ## 0.5.3
 
 ### Patch Changes
