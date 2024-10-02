@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.5
+
+### Patch Changes
+
+- b225bfe: add peer dep for `@eslint/js`
+
 ## 0.5.4
 
 ### Patch Changes
