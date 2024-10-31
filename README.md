@@ -120,7 +120,7 @@ add the following to VSCode's `settings.json`:
 {
 	// ctrl+shift+P then `> Preferences: Open Settings (JSON)`
 	// ...other config
-	"eslint.validate": ["svelte", "javascript", "javascriptreact"]
+	"eslint.validate": ["svelte", "javascript", "javascriptreact"],
 }
 ```
 
@@ -139,9 +139,11 @@ This repo uses [changesets](https://github.com/changesets/changesets):
 ```bash
 npm i -g @changesets/cli # install yourself, it's not a dev dep, maybe it should be
 changeset # add a changeset
+git add .
+git commit -am "some message, maybe the same as the changeset"
+git push
 changeset version # when ready to publish
 changeset publish
-git add .
 git commit -am vX.Y.Z
 git push
 git push --tags

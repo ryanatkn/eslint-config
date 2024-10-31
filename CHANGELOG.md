@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.6
+
+### Patch Changes
+
+- 75c1c41: change `@typescript-eslint/switch-exhaustiveness-check` to use `considerDefaultExhaustiveForUnions: true`
+
 ## 0.5.5
 
 ### Patch Changes
