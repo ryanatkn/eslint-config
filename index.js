@@ -115,7 +115,10 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/restrict-plus-operands': 0,
 				'@typescript-eslint/restrict-template-expressions': 0, // false positives with many types that stringify
 				'@typescript-eslint/return-await': 1,
-				'@typescript-eslint/switch-exhaustiveness-check': 1,
+				'@typescript-eslint/switch-exhaustiveness-check': [
+					1,
+					{considerDefaultExhaustiveForUnions: true},
+				],
 				'@typescript-eslint/triple-slash-reference': [
 					1,
 					{path: 'never', types: 'never', lib: 'never'},
