@@ -172,6 +172,9 @@ const unmapped_svelte_config = ts.config({
 	languageOptions: {
 		parserOptions: {
 			parser: ts.parser,
+			svelteFeatures: {
+				experimentalGenerics: true,
+			},
 		},
 	},
 });
