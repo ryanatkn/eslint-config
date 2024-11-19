@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.5.7
+
+### Patch Changes
+
+- 0bb2f79: enable `experimentalGenerics`
+
 ## 0.5.6
 
 ### Patch Changes
