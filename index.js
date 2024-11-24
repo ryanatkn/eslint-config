@@ -60,7 +60,7 @@ const unmapped_ts_config = ts.config({
 				'prefer-promise-reject-errors': [1, {allowEmptyReject: true}],
 				'prefer-regex-literals': [1, {disallowRedundantWrapping: true}],
 				radix: 1,
-				'@typescript-eslint/array-type': [1, {default: 'array-simple', readonly: 'array-simple'}],
+				'@typescript-eslint/array-type': [1, {default: 'generic'}],
 				'@typescript-eslint/ban-ts-comment': 0,
 				'@typescript-eslint/consistent-generic-constructors': [1, 'type-annotation'],
 				'@typescript-eslint/consistent-type-exports': [

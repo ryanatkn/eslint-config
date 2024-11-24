@@ -31,7 +31,7 @@ Open issues or drop by [my Discord](https://discord.gg/YU5tyeK72X).
 I'm happy to discuss my choices - if something feels restrictive without fixing actual mistakes,
 it's likely to reduce cognitive load when reading code.
 
-> ⚠️ Some rules may be annoyingly strict.
+> ⚠️ Some rules may be annoyingly strict and you should override to your preference.
 > Some rules require tsconfig options like `strictNullChecks`,
 > and more nags go way if you enable `noUncheckedIndexedAccess` and `exactOptionalPropertyTypes`.
 > (I personally don't use these yet, will revisit)
