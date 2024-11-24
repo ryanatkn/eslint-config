@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.6.0
+
+### Minor Changes
+
+- 65e830b: change `@typescript-eslint/array-type` to `'generic'`
+
 ## 0.5.7
 
 ### Patch Changes
