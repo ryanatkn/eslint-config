@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.7.0
+
+### Minor Changes
+
+- disable `@typescript-eslint/prefer-nullish-coalescing` because it's dangerous
+
 ## 0.6.2
 
 ### Patch Changes
