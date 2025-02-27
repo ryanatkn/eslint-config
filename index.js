@@ -107,7 +107,7 @@ const unmapped_ts_config = ts.config({
 					},
 				],
 				'@typescript-eslint/prefer-for-of': 0,
-				'@typescript-eslint/prefer-nullish-coalescing': 0, // the false positives here can be dangerous to follow without careful consideration in some cases, so it's better to have no rule IMO
+				// '@typescript-eslint/prefer-nullish-coalescing': 0, // the false positives here can be dangerous to follow without careful consideration in some cases, so it's better to have no rule IMO
 				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
 					{allowSingleElementEquality: 'always'},
