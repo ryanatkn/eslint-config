@@ -43,9 +43,6 @@ it's likely to reduce cognitive load when reading code.
 > see below for the simple way to change the global rules,
 > and maybe hop on [Discord](https://discord.gg/YU5tyeK72X) to discuss.
 
-> ⚠️ The peer dependency versions may be overly restrictive.
-> Please let me know if it's causing a problem.
-
 ## Usage
 
 Install ESLint dev dependencies with
