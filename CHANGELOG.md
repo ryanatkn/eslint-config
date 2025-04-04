@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.8.0
+
+### Minor Changes
+
+- b68f784: upgrade deps ([#3](https://github.com/ryanatkn/eslint-config/pull/3))
+
 ## 0.7.0
 
 ### Minor Changes
