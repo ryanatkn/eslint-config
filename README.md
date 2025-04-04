@@ -3,7 +3,7 @@
 > an [ESLint](https://eslint.org/) config for TypeScript, Svelte, and Prettier
 
 ```bash
-npm i -D @ryanatkn/eslint-config
+npm i -D @ryanatkn/eslint-config # node >=22.11
 ```
 
 I use this [ESLint](https://github.com/eslint/eslint/)
@@ -42,9 +42,6 @@ it's likely to reduce cognitive load when reading code.
 > If anything is too cumbersome or lax for your taste,
 > see below for the simple way to change the global rules,
 > and maybe hop on [Discord](https://discord.gg/YU5tyeK72X) to discuss.
-
-> ⚠️ The peer dependency versions may be overly restrictive.
-> Please let me know if it's causing a problem.
 
 ## Usage
 
