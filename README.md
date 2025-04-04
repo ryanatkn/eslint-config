@@ -3,7 +3,7 @@
 > an [ESLint](https://eslint.org/) config for TypeScript, Svelte, and Prettier
 
 ```bash
-npm i -D @ryanatkn/eslint-config
+npm i -D @ryanatkn/eslint-config # node >=22.11
 ```
 
 I use this [ESLint](https://github.com/eslint/eslint/)
