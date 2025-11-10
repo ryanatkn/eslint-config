@@ -185,7 +185,7 @@ const unmapped_configs = [
 	...unmapped_ts_config,
 	...unmapped_svelte_config,
 	{
-		ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*'],
+		ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*', 'src/test/fixtures/**'],
 	},
 ];
 
