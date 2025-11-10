@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.8.1
+
+### Patch Changes
+
+- ignore src/test/fixtures
+
 ## 0.8.0
 
 ### Minor Changes
