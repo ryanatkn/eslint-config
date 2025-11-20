@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.9.0
+
+### Minor Changes
+
+- 80c111c: disallow $lib and $routes aliases in src/lib
+
 ## 0.8.1
 
 ### Patch Changes
