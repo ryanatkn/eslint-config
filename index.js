@@ -180,12 +180,38 @@ const unmapped_svelte_config = ts.config({
 	},
 });
 
-/** @type {import('eslint').Linter.FlatConfig[]} */
+/** @type {import('eslint').Linter.Config[]} */
 const unmapped_configs = [
 	...unmapped_ts_config,
 	...unmapped_svelte_config,
 	{
-		ignores: ['node_modules', '.svelte-kit', 'build', 'dist', '.gro', 'dist_*', 'src/test/fixtures/**'],
+		name: '@ryanatkn/eslint-config#no-lib-alias-in-lib',
+		files: ['src/lib/**/*.js', 'src/lib/**/*.ts', 'src/lib/**/*.svelte'],
+		rules: {
+			'no-restricted-imports': [
+				1, // warn
+				{
+					patterns: [
+						{
+							group: ['$lib/*', '$routes/*'],
+							message:
+								'Do not use $lib or $routes aliases in library code (src/lib). Use relative imports instead.',
+						},
+					],
+				},
+			],
+		},
+	},
+	{
+		ignores: [
+			'node_modules',
+			'.svelte-kit',
+			'build',
+			'dist',
+			'.gro',
+			'dist_*',
+			'src/test/fixtures/**',
+		],
 	},
 ];
 
@@ -228,7 +254,7 @@ export const svelte_config = configs.find((c) => c.name === SVELTE_CONFIG_NAME);
 //  * Finds config rules that are added above but duplicate the base config.
 //  * That means they can be deleted above,
 //  * but ONLY if the values fully match the defaults. (TODO could just deepequal compare but it's fine)
-//  * @param {import('eslint').Linter.FlatConfig[]} configs
+//  * @param {import('eslint').Linter.Config[]} configs
 //  */
 // const lint_configs = (configs) => {
 // 	const rule_maps = configs
