@@ -203,6 +203,15 @@ const unmapped_configs = [
 		},
 	},
 	{
+		files: ['**/test/**/*.ts', '**/tests/**/*.ts', '**/*.test.ts'],
+		rules: {
+			'@typescript-eslint/no-empty-function': 0,
+			'@typescript-eslint/require-await': 0,
+			'@typescript-eslint/no-dynamic-delete': 0,
+			'no-await-in-loop': 0,
+		},
+	},
+	{
 		ignores: [
 			'node_modules',
 			'.svelte-kit',
