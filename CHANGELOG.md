@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.10.0
+
+### Minor Changes
+
+- 921cbd1: disable some rules for tests
+
 ## 0.9.0
 
 ### Minor Changes
