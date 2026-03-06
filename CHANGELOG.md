@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.10.1
+
+### Patch Changes
+
+- 6df330e: disable `@typescript-eslint/consistent-generic-constructors`
+
 ## 0.10.0
 
 ### Minor Changes
