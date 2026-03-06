@@ -62,7 +62,7 @@ const unmapped_ts_config = ts.config({
 				radix: 1,
 				'@typescript-eslint/array-type': [1, {default: 'generic'}],
 				'@typescript-eslint/ban-ts-comment': 0,
-				'@typescript-eslint/consistent-generic-constructors': [1, 'type-annotation'],
+				'@typescript-eslint/consistent-generic-constructors': [0, 'type-annotation'], // sometimes cleaner as 'constructor'
 				'@typescript-eslint/consistent-type-exports': [
 					1,
 					{fixMixedExportsWithInlineTypeSpecifier: true},
