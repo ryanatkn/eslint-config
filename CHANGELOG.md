@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.11.0
+
+### Minor Changes
+
+- c6c1d2e: disable some rules that cause undue friction
+
 ## 0.10.1
 
 ### Patch Changes
