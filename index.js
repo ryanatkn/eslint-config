@@ -16,7 +16,7 @@ const unmapped_ts_config = ts.config({
 			name: TS_CONFIG_NAME,
 			rules: {
 				'array-callback-return': 1,
-				'no-await-in-loop': 1,
+				'no-await-in-loop': 0,
 				'no-constructor-return': 1,
 				'no-duplicate-imports': 1,
 				'no-inner-declarations': 1,
@@ -60,7 +60,7 @@ const unmapped_ts_config = ts.config({
 				'prefer-promise-reject-errors': [1, {allowEmptyReject: true}],
 				'prefer-regex-literals': [1, {disallowRedundantWrapping: true}],
 				radix: 1,
-				'@typescript-eslint/array-type': [1, {default: 'generic'}],
+				'@typescript-eslint/array-type': 0,
 				'@typescript-eslint/ban-ts-comment': 0,
 				'@typescript-eslint/consistent-generic-constructors': [0, 'type-annotation'], // sometimes cleaner as 'constructor'
 				'@typescript-eslint/consistent-type-exports': [
@@ -71,7 +71,7 @@ const unmapped_ts_config = ts.config({
 					1,
 					{allowArgumentsExplicitlyTypedAsAny: true},
 				],
-				'@typescript-eslint/method-signature-style': 1,
+				'@typescript-eslint/method-signature-style': 0,
 				'@typescript-eslint/no-confusing-void-expression': [
 					1,
 					{ignoreArrowShorthand: true, ignoreVoidOperator: true},
@@ -107,6 +107,7 @@ const unmapped_ts_config = ts.config({
 					},
 				],
 				'@typescript-eslint/prefer-for-of': 0,
+				'@typescript-eslint/prefer-optional-chain': 0,
 				'@typescript-eslint/prefer-nullish-coalescing': 0, // the false positives here can be dangerous to follow without careful consideration in some cases, so it's better to have no rule IMO
 				'@typescript-eslint/prefer-string-starts-ends-with': [
 					1,
