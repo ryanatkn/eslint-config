@@ -27,14 +27,14 @@ const unmapped_ts_config = ts.config({
 				'default-case-last': 1,
 				eqeqeq: [1, 'always', {null: 'ignore'}],
 				'grouped-accessor-pairs': [1, 'getBeforeSet'],
-				'no-alert': 1, // <3 these but often they're for testing; make explicit w/ eslint-ignore-line
+				'no-alert': 1,
 				'no-empty': [1, {allowEmptyCatch: true}],
 				'no-eval': 1,
 				'no-extend-native': 1,
 				'no-lone-blocks': 1,
 				'no-new': 1,
 				'no-new-func': 1, // catches cases missed by @typescript-eslint/no-implied-eval
-				'no-new-object': 1,
+				'no-object-constructor': 1,
 				'no-new-wrappers': 1,
 				'no-octal-escape': 1,
 				'no-param-reassign': 1, // seems better to disallow and ignore when needed; might be annoying
@@ -44,7 +44,7 @@ const unmapped_ts_config = ts.config({
 				'no-unneeded-ternary': [1, {defaultAssignment: false}],
 				'no-useless-call': 1,
 				'no-useless-computed-key': [1, {enforceForClassMembers: true}],
-				'no-useless-concat': 1,
+				'no-useless-concat': 0, // stylistic - multi-line splits often aid readability
 				'no-useless-rename': 1,
 				'prefer-const': 1,
 				'no-var': 0, // hot paths may want to use var and overriding eslint is cumbersome
@@ -62,7 +62,7 @@ const unmapped_ts_config = ts.config({
 				radix: 1,
 				'@typescript-eslint/array-type': 0,
 				'@typescript-eslint/ban-ts-comment': 0,
-				'@typescript-eslint/consistent-generic-constructors': [0, 'type-annotation'], // sometimes cleaner as 'constructor'
+				'@typescript-eslint/consistent-generic-constructors': 0, // sometimes cleaner as 'constructor'
 				'@typescript-eslint/consistent-type-exports': [
 					1,
 					{fixMixedExportsWithInlineTypeSpecifier: true},
@@ -76,17 +76,15 @@ const unmapped_ts_config = ts.config({
 					1,
 					{ignoreArrowShorthand: true, ignoreVoidOperator: true},
 				],
-				'@typescript-eslint/no-empty-function': [
-					1,
-					{allow: ['overrideMethods', 'decoratedFunctions']},
-				],
+				'@typescript-eslint/no-empty-function': 0, // empty stubs and no-op defaults are common and harmless
+				'@typescript-eslint/no-empty-object-type': [1, {allowInterfaces: 'with-single-extends'}], // allow `interface Foo extends Bar<...> {}` as a named-type marker
 				'@typescript-eslint/no-explicit-any': 0,
 				'@typescript-eslint/no-inferrable-types': 0,
 				'@typescript-eslint/no-invalid-this': [1, {capIsConstructor: false}],
 				'@typescript-eslint/no-invalid-void-type': 0, // TODO revisit - https://github.com/typescript-eslint/typescript-eslint/issues/5752
 				'@typescript-eslint/no-misused-promises': [1, {checksVoidReturn: false}],
 				'@typescript-eslint/no-non-null-assertion': 0,
-				'@typescript-eslint/no-unnecessary-condition': [1, {allowConstantLoopConditions: true}], // TODO maybe remove this, causing false positives with `??` chaining, also maybed helped in some situations with `noUncheckedIndexedAccess`
+				'@typescript-eslint/no-unnecessary-condition': 0, // footgun - strips defensive checks on values whose runtime types (parsed JSON, DOM APIs, CSP strings) outrun TS's view
 				'@typescript-eslint/no-unnecessary-type-parameters': 0, // TODO revisit - https://typescript-eslint.io/rules/no-unnecessary-type-parameters/
 				'@typescript-eslint/no-unsafe-argument': 0,
 				'@typescript-eslint/no-unsafe-assignment': 0,
@@ -168,6 +166,7 @@ const unmapped_svelte_config = ts.config({
 				'svelte/no-inner-declarations': 0,
 				'svelte/no-not-function-handler': 0,
 				'svelte/no-shorthand-style-property-overrides': 0, // covered by `svelte/prefer-style-directive`
+				'svelte/no-useless-mustaches': 0, // intentional mustaches aid clarity and survive Prettier
 			},
 		},
 	],
@@ -204,7 +203,7 @@ const unmapped_configs = [
 		},
 	},
 	{
-		files: ['**/test/**/*.ts', '**/tests/**/*.ts', '**/*.test.ts'],
+		files: ['**/test/**/*.ts', '**/tests/**/*.ts', '**/testing/**/*.ts', '**/*.test.ts'],
 		rules: {
 			'@typescript-eslint/no-empty-function': 0,
 			'@typescript-eslint/require-await': 0,
@@ -225,6 +224,9 @@ const unmapped_configs = [
 	},
 ];
 
+// Normalize every rule to warn - `strictTypeChecked` ships with `error` levels,
+// and we'd rather not have lint break tooling by default. CI can re-escalate
+// with `--max-warnings 0` if desired.
 const map_errors_to_warn = (configs) =>
 	configs.map((config) => {
 		if (!config.rules) return config;
