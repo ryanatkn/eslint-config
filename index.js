@@ -193,9 +193,9 @@ const unmapped_configs = [
 				{
 					patterns: [
 						{
-							group: ['$lib/*', '$routes/*'],
+							group: ['$lib/*', '$routes/*', '#lib/*', '#routes/*'],
 							message:
-								'Do not use $lib or $routes aliases in library code (src/lib). Use relative imports instead.',
+								'Do not use $lib/$routes or #lib/#routes aliases in library code (src/lib) — they resolve in dev/test but not in the published package (only dist ships). Use relative imports instead.',
 						},
 					],
 				},
