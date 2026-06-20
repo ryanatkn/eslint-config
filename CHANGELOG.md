@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.12.2
+
+### Patch Changes
+
+- 7d8f6b4: feat: deny `#lib/` and `#routes/` like `$lib/` and `$routes/`
+
 ## 0.12.1
 
 ### Patch Changes
