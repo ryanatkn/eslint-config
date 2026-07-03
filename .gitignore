@@ -1,2 +1,6 @@
+# Local (per-machine, never shared)
+*.local
+*.local.*
+
 .DS_Store
 /node_modules
