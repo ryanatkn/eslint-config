@@ -48,21 +48,6 @@
   },
   "devDependencies": {
     "@changesets/changelog-git": "^0.2.1",
-    "prettier": "^3.5.3",
     "typescript": "^5.8.2"
-  },
-  "prettier": {
-    "useTabs": true,
-    "printWidth": 100,
-    "singleQuote": true,
-    "bracketSpacing": false,
-    "overrides": [
-      {
-        "files": "package.json",
-        "options": {
-          "useTabs": false
-        }
-      }
-    ]
   }
 }
