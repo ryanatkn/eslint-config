@@ -166,7 +166,7 @@ const unmapped_svelte_config = ts.config({
 				'svelte/no-inner-declarations': 0,
 				'svelte/no-not-function-handler': 0,
 				'svelte/no-shorthand-style-property-overrides': 0, // covered by `svelte/prefer-style-directive`
-				'svelte/no-useless-mustaches': 0, // intentional mustaches aid clarity and survive Prettier
+				'svelte/no-useless-mustaches': 0, // intentional mustaches aid clarity and survive formatting
 			},
 		},
 	],

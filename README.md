@@ -1,6 +1,6 @@
 # @ryanatkn/eslint-config
 
-> an [ESLint](https://eslint.org/) config for TypeScript, Svelte, and Prettier
+> an [ESLint](https://eslint.org/) config for TypeScript and Svelte
 
 ```bash
 npm i -D @ryanatkn/eslint-config # node >=22.11
@@ -13,10 +13,8 @@ It extends the [`typescript-eslint`](https://github.com/typescript-eslint/typesc
 strict and stylistic typechecked configs,
 modifying or removing some rules and adding others. See [index.js](index.js) for details.
 
-It's designed to complement TypeScript and Prettier,
+It's designed to complement TypeScript and a separate formatter,
 so all redundant rules are omitted.
-It doesn't use the Prettier ESLint plugin - you can add it yourself,
-I prefer running Prettier with `--check` separately.
 
 To distinguish linting problems from type errors visually in your editor,
 all of the rules are set to warn, not error,
@@ -155,8 +153,7 @@ and [`npm publish`](https://docs.npmjs.com/cli/v8/commands/npm-publish).
 [typescript-eslint](https://github.com/typescript-eslint/typescript-eslint) ∙
 [eslint-plugin-svelte](https://github.com/sveltejs/eslint-plugin-svelte) ∙
 [TypeScript](https://github.com/microsoft/TypeScript) ∙
-[Svelte](https://github.com/sveltejs/svelte) ∙
-[Prettier](https://github.com/prettier/prettier)
+[Svelte](https://github.com/sveltejs/svelte)
 & [more](package.json)
 
 ## License [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)

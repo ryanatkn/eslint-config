@@ -1,6 +1,6 @@
 {
   "name": "@ryanatkn/eslint-config",
-  "description": "an ESLint config for TypeScript, Svelte, and Prettier",
+  "description": "an ESLint config for TypeScript and Svelte",
   "version": "0.12.2",
   "license": "Unlicense",
   "homepage": "https://github.com/ryanatkn/eslint-config",
