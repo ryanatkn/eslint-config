@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.12.3
+
+### Patch Changes
+
+- cde6473: feat: support TypeScript 6 (`typescript` peer `^5.5 || ^6`)
+
 ## 0.12.2
 
 ### Patch Changes
