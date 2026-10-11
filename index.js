@@ -185,6 +185,28 @@ const unmapped_configs = [
 	...unmapped_ts_config,
 	...unmapped_svelte_config,
 	{
+		// SvelteKit 3 removed `$lib`, and `$routes` was a config `alias` (deprecated in kit 3);
+		// the package.json subpath imports `#lib/*` and `#routes/*` replace them. Precedes the
+		// src/lib rule below, whose `no-restricted-imports` replaces this one's there. A consumer's
+		// own `no-restricted-imports` goes after `...configs`, or this one replaces it.
+		name: '@ryanatkn/eslint-config#no-sveltekit-lib-alias',
+		files: ['**/*.js', '**/*.ts', '**/*.svelte'],
+		rules: {
+			'no-restricted-imports': [
+				1, // warn
+				{
+					patterns: [
+						{
+							group: ['/$lib', '/$lib/*', '/$routes', '/$routes/*'],
+							message:
+								'SvelteKit 3 removed $lib, and $routes was a deprecated config alias. Use the package.json subpath imports #lib/* and #routes/* outside src/lib, and relative imports inside it.',
+						},
+					],
+				},
+			],
+		},
+	},
+	{
 		name: '@ryanatkn/eslint-config#no-lib-alias-in-lib',
 		files: ['src/lib/**/*.js', 'src/lib/**/*.ts', 'src/lib/**/*.svelte'],
 		rules: {
@@ -193,9 +215,19 @@ const unmapped_configs = [
 				{
 					patterns: [
 						{
-							group: ['$lib/*', '$routes/*', '#lib/*', '#routes/*'],
+							// anchored, and `#` escaped (a leading `#` is a gitignore-style comment)
+							group: [
+								'/$lib',
+								'/$lib/*',
+								'/$routes',
+								'/$routes/*',
+								'/\\#lib',
+								'/\\#lib/*',
+								'/\\#routes',
+								'/\\#routes/*',
+							],
 							message:
-								'Do not use $lib/$routes or #lib/#routes aliases in library code (src/lib) — they resolve in dev/test but not in the published package (only dist ships). Use relative imports instead.',
+								'Library code (src/lib) imports relatively: #lib/#routes resolve against whichever package imports them, so code generated or injected into a consumer would point at the consumer, and SvelteKit 3 has no $lib.',
 						},
 					],
 				},
