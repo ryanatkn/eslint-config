@@ -1,5 +1,15 @@
 # @ryanatkn/eslint-config
 
+## 0.13.0
+
+### Minor Changes
+
+- ec12bef: **breaking** feat: deny `$lib` and `$routes` everywhere, not just in `src/lib` (SvelteKit 3 removed `$lib`)
+
+### Patch Changes
+
+- ec12bef: fix: the `src/lib` ban on `#lib/` and `#routes/` now matches (a leading `#` read as a gitignore-style comment, so the patterns never fired)
+
 ## 0.12.3
 
 ### Patch Changes
