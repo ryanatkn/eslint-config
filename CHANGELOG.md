@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.13.1
+
+### Patch Changes
+
+- d58c504: fix: ignore `.claude/worktrees/`, where agent worktrees are full repo checkouts
+
 ## 0.13.0
 
 ### Minor Changes
