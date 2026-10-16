@@ -254,6 +254,7 @@ const unmapped_configs = [
 			'**/.gro/',
 			'**/.zzz/',
 			'**/.fuz/',
+			'**/.claude/worktrees/',
 			'**/fixtures/',
 		],
 	},
