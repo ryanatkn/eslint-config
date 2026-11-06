@@ -63,6 +63,7 @@ const unmapped_ts_config = ts.config({
 				'@typescript-eslint/array-type': 0,
 				'@typescript-eslint/ban-ts-comment': 0,
 				'@typescript-eslint/consistent-generic-constructors': 0, // sometimes cleaner as 'constructor'
+				'@typescript-eslint/consistent-type-definitions': 0, // a type alias has an implicit index signature
 				'@typescript-eslint/consistent-type-exports': [
 					1,
 					{fixMixedExportsWithInlineTypeSpecifier: true},
