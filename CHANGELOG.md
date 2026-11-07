@@ -1,5 +1,11 @@
 # @ryanatkn/eslint-config
 
+## 0.13.2
+
+### Patch Changes
+
+- 243e40f: fix: turn off `@typescript-eslint/consistent-type-definitions`, so an object type alias is allowed beside interfaces (an alias has an implicit index signature, which an interface lacks)
+
 ## 0.13.1
 
 ### Patch Changes
