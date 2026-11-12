@@ -2,7 +2,7 @@
   "name": "@ryanatkn/eslint-config",
   "description": "an ESLint config for TypeScript and Svelte",
   "version": "0.13.2",
-  "license": "Unlicense",
+  "license": "0BSD",
   "homepage": "https://github.com/ryanatkn/eslint-config",
   "author": {
     "name": "Ryan Atkinson",

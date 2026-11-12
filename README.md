@@ -158,4 +158,4 @@ and [`npm publish`](https://docs.npmjs.com/cli/v8/commands/npm-publish).
 
 ## License [🐦](https://wikipedia.org/wiki/Free_and_open-source_software)
 
-public domain ⚘ [The Unlicense](license)
+[0BSD](LICENSE)
